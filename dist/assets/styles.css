@@ -1,6 +1,4 @@
 :root {
-    --font-header: "Unkempt", sans-serif;
-    --font-body: 24px/1.5 sans-serif;
     --color-body: #e7e7e7;
 }
 
@@ -9,14 +7,15 @@ body {
   background-color: rgb(33,33,33);
   background-image: url(/assets/img/cast-iron.jpg);
   color: var(--color-body);
-  font: var(--font-body);
+  font: clamp(14px, 1.5vw + 12px, 24px)/1.5 sans-serif;
   margin: 0 auto;
+  max-width: 800px;
   text-align: center;
-  width: 50vw;
+  width: 90%;
 }
 
 h1, h2, h3 {
-  font-family: var(--font-header);
+  font-family: "Unkempt", sans-serif;
 }
 
 h1 {
@@ -62,4 +61,28 @@ a:hover {
 .reverse {
   unicode-bidi: bidi-override;
   direction: rtl;
+}
+
+@media (max-width: 768px) {
+  header {
+    margin: 1rem 0;
+  }
+
+  header figure img {
+    height: auto;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  section {
+    margin: 2rem 0;
+  }
+
+  header nav a {
+    margin: 0;
+    padding: 0.5rem;
+  }
 }
