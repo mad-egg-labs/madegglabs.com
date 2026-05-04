@@ -1,5 +1,6 @@
 :root {
     --color-body: #e7e7e7;
+    --color-decorative: #666;
 }
 
 body {
@@ -27,12 +28,23 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 0.25rem 0;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  border-bottom: solid 1px var(--color-decorative);
+  font-size: 2rem;
+}
+
 header {
+  border-bottom: solid 1px var(--color-body);
   margin: 2rem 0;
+  padding-bottom: 2rem;
   text-align: center;
 }
 
@@ -85,10 +97,6 @@ figure a {
   header figure img {
     height: auto;
     width: 60%;
-  }
-
-  h1 {
-    font-size: 2.5rem;
   }
 
   section {
