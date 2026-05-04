@@ -72,6 +72,11 @@ footer .footnotes {
   opacity: 0.67;
 }
 
+aside {
+  border-left: solid 8px var(--color-decorative);
+  padding-left: 2rem;
+}
+
 a {
   color: var(--color-body);
 }
