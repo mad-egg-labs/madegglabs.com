@@ -2,6 +2,6 @@
 
 Public website for Mad Egg Labs built with the following:
 
-- Sanity.io
-- Astro
-- Netlify
+- HTML
+- CSS
+- JavaScript
