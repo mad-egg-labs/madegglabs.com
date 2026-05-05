@@ -47,7 +47,7 @@ h3 {
 
 header {
   border-bottom: solid 1px var(--color-body);
-  margin: 2rem 0;
+  margin: 3rem 0 2rem 0;
   padding-bottom: 2rem;
   text-align: center;
 }
@@ -70,7 +70,12 @@ section {
 footer {
   border-top: solid 1px var(--color-body);
   font-size: 85%;
+  padding: 2rem 0;
   text-align: center;
+}
+
+footer p {
+  margin: 0;
 }
 
 footer .footnotes {
