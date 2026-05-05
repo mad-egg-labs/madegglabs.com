@@ -1,6 +1,6 @@
 :root {
-    --color-body: #e7e7e7;
-    --color-decorative: #666;
+  --color-body: #e7e7e7;
+  --color-decorative: #666;
 }
 
 body {
@@ -16,7 +16,10 @@ body {
   ;
   background-size: cover, auto;
   color: var(--color-body);
-  font: clamp(14px, 1.5vw + 12px, 24px)/1.5 sans-serif;
+  font-family: system-ui;
+  font-feature-settings: "ss06";
+  font-size: clamp(14px, 1.5vw + 12px, 24px);
+  line-height: 1.5;
   margin: 0 auto;
   max-width: 800px;
   text-shadow: rgba(0,0,0,0.67) 0 0.1em 0.2em;
@@ -24,21 +27,21 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: "Unkempt", sans-serif;
+  font-family: "Bahianita", sans-serif;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 0.25rem 0;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 h3 {
   border-bottom: solid 1px var(--color-decorative);
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 header {
@@ -89,9 +92,8 @@ figure a {
   text-decoration: none;
 }
 
-.reverse {
-  unicode-bidi: bidi-override;
-  direction: rtl;
+ul, ol {
+  padding-left: 1em;
 }
 
 @media (max-width: 768px) {
