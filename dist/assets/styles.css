@@ -1,6 +1,7 @@
 :root {
   --color-body: #e7e7e7;
   --color-decorative: #666;
+  --shadow: rgba(0,0,0,0.67) 0.1em 0.1em 0.2em;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
   line-height: 1.5;
   margin: 0 auto;
   max-width: 800px;
-  text-shadow: rgba(0,0,0,0.67) 0 0.1em 0.2em;
+  text-shadow: var(--shadow);
   width: 90%;
 }
 
@@ -52,6 +53,7 @@ header {
 }
 
 header figure img {
+  filter: drop-shadow(var(--shadow));
   height: 25vh;
   width: auto;
 }
