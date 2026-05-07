@@ -1,18 +1,17 @@
 :root {
   --color-body: #e7e7e7;
   --color-decorative: #666;
-  --safe-top: env(safe-area-inset-top, 2rem);
   --shadow: rgba(0,0,0,0.67) 0.1em 0.1em 0.2em;
 }
 
 html, body {
-  background-color: #19181d;
   height: 100dvh;
   margin: 0;
   padding: 0;
 }
 
 body {
+  background-color: #19181d;
   color: var(--color-body);
   font-family: system-ui;
   font-feature-settings: "ss06";
@@ -50,8 +49,7 @@ header, main, footer {
 header {
   border-bottom: solid 1px var(--color-body);
   padding-bottom: 2rem;
-  /*padding-top: 2rem;*/
-  padding-top: var(--safe-top);
+  padding-top: 2rem;
   text-align: center;
 }
 
