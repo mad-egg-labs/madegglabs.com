@@ -6,13 +6,13 @@
 }
 
 html, body {
+  background-color: #19181d;
+  height: 100dvh;
   margin: 0;
   padding: 0;
-  height: 100dvh;
 }
 
 body {
-  background-color: #19181d;
   color: var(--color-body);
   font-family: system-ui;
   font-feature-settings: "ss06";
