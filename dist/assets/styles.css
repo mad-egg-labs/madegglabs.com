@@ -105,6 +105,10 @@ ul, ol {
 }
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: auto;
+  }
+
   header {
     margin: 1rem 0;
   }
