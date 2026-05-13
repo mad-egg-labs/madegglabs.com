@@ -119,6 +119,16 @@ figure a {
   text-decoration: none;
 }
 
+img.avatar {
+  border: solid 8px var(--color-decorative);
+  display: inline-block;
+  box-shadow: var(--shadow);
+  height: auto;
+  float: left;
+  margin: 8px 1rem 1rem 0;
+  width: 120px;
+}
+
 ul, ol {
   padding-left: 1em;
 }
