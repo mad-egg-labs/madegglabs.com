@@ -1,4 +1,4 @@
-// Copyright (c) Mad Egg Labs, Inc 2026
+/* Copyright (c) 2026 Mad Egg Labs, Inc */
 
 function insertEmailLinks() {
   document.querySelectorAll('.email-link').forEach(el => {
