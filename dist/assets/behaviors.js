@@ -1,10 +1,10 @@
 // Copyright (c) Mad Egg Labs, Inc 2026
 
 function insertEmailLinks() {
-  const user = 'hello';
-  const domain = 'madegglabs.com';
-  const email = `${user}@${domain}`;
   document.querySelectorAll('.email-link').forEach(el => {
+    const user = el.dataset.user || 'hello';
+    const domain = 'madegglabs.com';
+    const email = `${user}@${domain}`;
     const link = document.createElement('a');
     link.href = `mailto:${email}`;
     link.textContent = email;
