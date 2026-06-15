@@ -60,6 +60,9 @@ header figure img {
   height: 25vh;
   width: auto;
 }
+  .iiyr header figure img {
+    height: 28vh;
+  }
 
 header nav a {
   display: inline-block;
@@ -133,6 +136,30 @@ img.avatar {
 
 ul, ol {
   padding-left: 1em;
+}
+
+#faqs {
+  margin: 2rem 0;
+}
+
+label {
+  display: block;
+  margin: 2rem 0;
+}
+
+input[type=search] {
+  font-size: 1.25rem;
+}
+
+details {
+  margin: 1rem 0;
+}
+  details p {
+    margin-left: 2rem;
+  }
+
+summary {
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {

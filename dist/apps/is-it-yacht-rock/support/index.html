@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#19181d">
+    <title>Support – Is It Yacht Rock? – Mad Egg Labs</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="128x128">
+    <link rel="apple-touch-icon" sizes="128x128" href="/favicon.png">
+    <meta property="og:url" content="https://madegglabs.com/apps/is-it-yacht-rock/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Is It Yacht Rock? by Mad Egg Labs">
+    <meta property="og:description" content="Is It Yacht Rock? is an iOS app by Mad Egg Labs that tells you whether a song is yacht rock. Mad Egg Labs, LLC provides software development and consulting services including mobile web development, CMS integrations, and iOS app development.">
+    <meta property="og:image" content="https://madegglabs.com/assets/img/social-iiyr.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script defer src="/assets/behaviors.js"></script>
+    <script>
+      window.faqs = [
+        { question: "Why this app?", answer: "Is It Yacht Rock? exists to help you, the Yacht Rock enthusiast, confirm whether or not songs you hear are considered part of the genre. It’s like Shazam meets Not Hotdog (<a href='https://www.youtube.com/watch?v=ACmydtFDTGs'>season 4, episode 4 of Silicon Valley</a>, no? anyway), but for Yacht Rock." },
+        { question: "How do I identify a song?", answer: "Tap the Listen tab in the bottom bar and activate the central action button. The app will then check your microphone or your Apple Music feed depending on your preferences." },
+        { question: "How do I look up a song manually?", answer: "Go to the Search tab. Type in any artist or song title to query the database directly without needing to play any live audio. You can also filter by Yachtski score or the year the song was released." },
+        { question: "What does “Song not ranked” mean?", answer: "When you match a song that is not in the official Yacht or Nyacht database, you’ll see the message “Song not ranked” instead of a yacht or nyacht verdict and Yachtski score." },
+        { question: "Where can I see my status and badges?", answer: "Tap the Status tab. This view displays your status and badges based on the tracks you have matched." },
+        { question: "Why is album art not always shown?", answer: "By default, songs in the search database do not have album art associated with them. When you match a song—either by using your microphone or via the “Use Now Playing” feature—the app will display its album art. This is a great way to keep track of which songs you’ve matched as you work to acquire badges." },
+        { question: "How do I change my settings?", answer: "Tap the Settings tab (the gear icon) to adjust your Yachtski threshold, toggle Purist Mode, manage hardware permissions, or view more information about the app." },
+        { question: "What is the Yachtski Scale?", answer: "This is the official rating system used by the Yacht or Nyacht podcast to determine how “Yacht Rock” a song is. They score tracks from 0 to 100 based on specific production styles, personnel, and musical rhythms." },
+        { question: "What makes a song “Yacht”?", answer: "High-end studio production, jazz-inflected chords, bounced rhythms, elite L.A. session musicians (like Jeff Porcaro or Michael McDonald), and a release date between 1976 and 1984." },
+        { question: "What is “Nyacht”?", answer: "Any song that fails to meet the Yachtski baseline threshold. This includes pure classic rock, folk, disco, or synth-pop that might sound breezy but lacks the required musical DNA." },
+        { question: "What does the Yachtski Threshold slider do?", answer: "It sets your personal baseline filter. For example, when you set it to 50, any song scoring below 50 on the Yachtski scale will be flagged as Nyacht." },
+        { question: "What is Purist Mode?", answer: "A toggle that alters how strictly the app handles Steely Dan, specifically. When enabled, Steely Dan is flagged as Nyacht, regardless of the particular song’s Yachtski score." },
+        { question: "How does “Use Now Playing” work?", answer: "When enabled, the app reads the metadata of whatever song is actively playing in your device’s Apple Music app. This allows you to check a track’s Yachtski score without using the microphone." },
+        { question: "Why does the app need Microphone Access?", answer: "To listen to ambient music playing around you (like in a bar or cafe) so it can identify the audio track and fetch its official Yachtski score." },
+        { question: "Does the app store my audio?", answer: "No. Audio captured via the microphone is converted into temporary digital fingerprints for matching and is never saved, stored, or transmitted anywhere." },
+        { question: "Why are there no ads to click on?", answer: "Oh, sorry. Yeah, we kind of hate ads. And we just built this app for fun, so there’s no real way to compensate us for the hours of enjoyment you’re likely to get from it. You’re welcome?" },
+      ];
+    </script>
+  </head>
+  <body class="iiyr">
+    <header>
+      <figure aria-hidden="true">
+        <a href="/" tabindex="-1"><img src="/assets/img/hat-egg.png" alt=""></a>
+      </figure>
+      <h1><a href="/">Mad Egg Labs</a></h1>
+    </header>
+    <main>
+      <section>
+        <h2><a href="../">Is It Yacht Rock?</a> – Support</h2>
+        <form>
+          <label>
+            Filter the FAQs by typing something into the search box.<br>
+            <input type="search" placeholder="yachtski">
+          </label>
+        </form>
+        <div id="faqs">
+          <p>Loading FAQs…</p>
+        </div>
+        <p>Have a question that’s not answered here? Email us at <span class="email-link" data-user="support"></span>.</p>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Copyright &copy; 2026 Mad Egg Labs, LLC. All rights reserved.
+        <a href="/privacy/">Privacy</a>
+      </p>
+      <p class="footnotes">
+        Mad Egg logo created from vector art from <a href="https://www.vecteezy.com/">Vecteezy</a>.
+      </p>
+    </footer>
+  </body>
+</html>
