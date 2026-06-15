@@ -148,7 +148,23 @@ label {
 }
 
 input[type=search] {
+  appearance: none;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23767676' d='M5 1a4 4 0 1 0 2.45 7.16l2.69 2.69a.5.5 0 0 0 .7-.7l-2.69-2.69A4 4 0 0 0 5 1zm0 1a3 3 0 1 1 0 6 3 3 0 0 1 0-6z'/%3E%3C/svg%3E");
+  background-position: 0.5rem center;
+  background-repeat: no-repeat;
+  border: 1px solid #767676;
+  border-radius: 1rem;
+  box-sizing: border-box;
   font-size: 1.25rem;
+  height: 2rem;
+  padding: 1rem 1rem 1rem 2rem;
+}
+
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 details {
