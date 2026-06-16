@@ -229,6 +229,7 @@ blockquote {
     font-family: Bahianita, serif;
     font-size: 4rem;
     left: -2rem;
+    opacity: 0.67;
     position: absolute;
     top: -1rem;
   }
