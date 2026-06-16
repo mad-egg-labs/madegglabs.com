@@ -91,7 +91,7 @@ footer .footnotes {
 
 h1, h2, h3 {
   clear: both;
-  font-family: "Bahianita", sans-serif;
+  font-family: Bahianita, sans-serif;
 }
 
 h1 {
@@ -226,6 +226,7 @@ blockquote {
 }
   blockquote p:before {
     content: "“";
+    font-family: Bahianita, serif;
     font-size: 4rem;
     left: -2rem;
     position: absolute;
