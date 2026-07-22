@@ -5,9 +5,10 @@ function insertEmailLinks() {
     const user = el.dataset.user || 'hello';
     const domain = 'madegglabs.com';
     const email = `${user}@${domain}`;
+    const content = el.innerText;
     const link = document.createElement('a');
     link.href = `mailto:${email}`;
-    link.textContent = email;
+    link.textContent = content || email;
     el.replaceWith(link);
   });
 }
