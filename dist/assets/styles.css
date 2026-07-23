@@ -1,5 +1,12 @@
 /* Copyright (c) 2026 Mad Egg Labs, Inc */
 
+/* narrow typefaces at reduced sizes to minimize cumulative layout shift (CLS) */
+@font-face {
+  font-family: "Bahianita-Fallback";
+  src: local("Avenir Next Condensed"), local("Arial Narrow"), local("Roboto Condensed");
+  size-adjust: 75%;
+}
+
 :root {
   --color-body: #e7e7e7;
   --color-decorative: #666;
@@ -43,35 +50,46 @@ body::before {
   z-index: -1;
 }
 
-header, main, footer {
+/* minimize cumulative layout shift (CLS) after the web component loads */
+site-header:not(:defined) {
+  display: block;
+  min-height: 420px;
+}
+
+site-header header, main, footer {
   margin: 0 auto;
   max-width: 800px;
   width: 90%;
 }
 
-header {
+site-header header {
   border-bottom: solid 1px var(--color-body);
   padding-bottom: 2rem;
   padding-top: 2rem;
   text-align: center;
 }
 
-header figure img {
+site-header header figure img {
   filter: drop-shadow(var(--shadow));
   height: 25vh;
   width: auto;
 }
-  .iiyr header figure img {
+  .iiyr site-header header figure img {
     height: 28vh;
   }
 
-header nav a {
+site-header header nav a {
   display: inline-block;
   margin: 0 0.25rem;
 }
 
-section {
+section, article {
   margin: 4rem 0;
+}
+
+.byline time {
+  font-size: 80%;
+  font-style: italic;
 }
 
 footer {
@@ -91,7 +109,8 @@ footer .footnotes {
 
 h1, h2, h3 {
   clear: both;
-  font-family: Bahianita, sans-serif;
+  font-family: Bahianita, "Bahianita-Fallback", sans-serif;
+  font-weight: normal;
 }
 
 h1 {
@@ -138,6 +157,10 @@ img.avatar {
 
 ul, ol {
   padding-left: 1em;
+}
+
+li {
+  margin: 1.5rem 0;
 }
 
 .app-icon {
@@ -277,8 +300,8 @@ summary {
 
 @media (max-width: 768px) {
   header figure img {
-    height: auto;
-    width: 60%;
+    height: 200px;
+    width: auto;
   }
 
   section {
@@ -312,5 +335,18 @@ summary {
 
   .gallery.of.screenshots figure {
     scroll-snap-align: center;
+  }
+}
+
+/* minimize cumulative layout shifts (CLS) */
+@media (max-width: 768px) {
+  site-header:not(:defined) {
+    min-height: 350px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  site-header:not(:defined) {
+    min-height: 380px;
   }
 }

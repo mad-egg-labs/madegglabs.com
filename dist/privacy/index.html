@@ -18,15 +18,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles.css">
+    <script type="module" src="/assets/web-components/index.js"></script>
     <script defer src="/assets/behaviors.js"></script>
   </head>
   <body>
-    <header>
-      <figure aria-hidden="true">
-        <a href="/" tabindex="-1"><img src="/assets/img/mad-egg.png" alt=""></a>
-      </figure>
-      <h1><a href="/">Mad Egg Labs</a></h1>
-    </header>
+    <site-header></site-header>
     <main>
       <section>
         <h2>Privacy Policy for Mad Egg Labs, LLC</h2>
@@ -62,14 +58,6 @@
         <p>Questions? Reach out to us at <span class="email-link" data-user="privacy"></span>.</p>
       </section>
     </main>
-    <footer>
-      <p>
-        Copyright &copy; 2026 Mad Egg Labs, LLC. All rights reserved.
-        <a href="/privacy/">Privacy</a>
-      </p>
-      <p class="footnotes">
-        Mad Egg logo created from vector art from <a href="https://www.vecteezy.com/">Vecteezy</a>.
-      </p>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>

@@ -18,22 +18,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles.css">
+    <script type="module" src="/assets/web-components/index.js"></script>
     <script defer src="/assets/behaviors.js"></script>
   </head>
   <body>
-    <header>
-      <figure aria-hidden="true">
-        <img src="/assets/img/mad-egg.png" alt="">
-      </figure>
-      <h1>Mad Egg Labs</h1>
-      <nav>
-        <p>
-          <a href="#about">About</a> •
-          <a href="#services">Services</a> •
-          <a href="#contact">Contact</a>
-        </p>
-      </nav>
-    </header>
+    <site-header></site-header>
     <main>
       <section>
         <h2 id="about">About</h2>
@@ -50,14 +39,6 @@
         <p>Mad Egg is currently taking on new customers. Let us know what you have cooking at <span class="email-link"></span>!</p>
       </section>
     </main>
-    <footer>
-      <p>
-        Copyright &copy; 2026 Mad Egg Labs, LLC. All rights reserved.
-        <a href="/privacy/">Privacy</a>
-      </p>
-      <p class="footnotes">
-        Mad Egg logo created from vector art from <a href="https://www.vecteezy.com/">Vecteezy</a>.
-      </p>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>
