@@ -10,6 +10,7 @@
 :root {
   --color-body: #e7e7e7;
   --color-decorative: #666;
+  --color-deemphasized: #ccc;
   --shadow: rgba(0,0,0,0.67) 0.1em 0.1em 0.2em;
 }
 
@@ -84,12 +85,45 @@ site-header header nav a {
 }
 
 section, article {
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
 
 .byline time {
   font-size: 80%;
   font-style: italic;
+}
+
+.breadcrumbs, .breadcrumbs a {
+  color: var(--color-deemphasized);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  font-style: italic;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  align-items: center;
+  display: inline-flex;
+  font-size: 85%;
+  margin: 0;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "›";
+  font-style: normal;
+  margin: 0 0.67rem;
+  speak: none;
+}
+
+.breadcrumbs a[aria-current="page"] {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
 }
 
 footer {
