@@ -85,4 +85,10 @@ function init() {
   initFAQs();
 }
 
-document.addEventListener('DOMContentLoaded', init);
+// we load this file as a module, so need to be defensive about when it loads
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+}
+else {
+  init();
+}
