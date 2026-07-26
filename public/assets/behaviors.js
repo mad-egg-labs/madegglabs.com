@@ -15,7 +15,7 @@ function insertEmailLinks() {
 
 // dynamically create FAQs using the data embedded on the page
 function initFAQs() {
-  if (Array.isArray(window.faqs)) {
+  if (Array.isArray(window.faqData)) {
     const data = window.faqs;
     const container = document.getElementById('faqs');
     if (container) {
