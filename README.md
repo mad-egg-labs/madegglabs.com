@@ -2,8 +2,12 @@
 
 # madegglabs.com
 
-Public website for Mad Egg Labs built with the following:
+[Public website for Mad Egg Labs](https://madegglabs.com) built with the following:
 
 - HTML
 - CSS
 - JavaScript
+
+Content is managed in [Sanity.io](https://madegglabscom.sanity.studio) and deployed via Static Site Generation (SSG) using Astro.
+
+Deploy content schema changes by running the following from within the `/studio` directory: `npx sanity@latest deploy`

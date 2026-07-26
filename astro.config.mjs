@@ -8,7 +8,7 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sanity({
-      projectId: 'madegglabs.com',
+      projectId: '1jmyyjqm',
       dataset: 'production',
       useCdn: false,
     })
