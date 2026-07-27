@@ -93,7 +93,7 @@ function init() {
   initFAQs();
 }
 
-// we load this file as a module, so need to be defensive about when it loads
+// we load this file as a module, so need to be defensive about when we call init()
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 }
