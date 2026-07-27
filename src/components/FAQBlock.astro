@@ -5,6 +5,7 @@ import { PortableText } from 'astro-portabletext'
 
 const hasFaqs = Array.isArray(items) && items.length > 0
 ---
+
 {hasFaqs ? (
   <div id="faqs">
     {items.map((item) => (
