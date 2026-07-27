@@ -1,7 +1,7 @@
 ---
 import { PortableText } from 'astro-portabletext'
-import FaqBlock from '../../../../../components/faqblock.astro'
-import { sanityClient } from '../../../../../lib/sanity'
+import FaqBlock from '../../../../components/faqblock.astro'
+import { sanityClient } from '../../../../lib/sanity'
 
 const query = `*[_type == "page" && slug.current == "support"][0]{
   title,
