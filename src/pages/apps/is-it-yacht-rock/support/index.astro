@@ -1,6 +1,7 @@
 ---
+
 import { PortableText } from 'astro-portabletext'
-import FaqBlock from '../../../../components/faqblock.astro'
+import faqblock from '../../../../components/faqblock.astro'
 import { sanityClient } from '../../../../lib/sanity'
 
 const query = `*[_type == "page" && slug.current == "support"][0]{
@@ -13,9 +14,10 @@ const page = await sanityClient.fetch(query)
 
 const portableTextComponents = {
   type: {
-    faqBlock: FaqBlock,
+    faqBlock: faqblock,
   },
 }
+
 ---
 <!doctype html>
 <html lang="en-US">
