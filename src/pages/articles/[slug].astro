@@ -1,0 +1,87 @@
+---
+
+import { PortableText } from 'astro-portabletext'
+import { sanityClient } from '../../lib/sanity'
+import { portableTextComponents } from '../../lib/portableTextComponents'
+import { formatDate } from '../../lib/utils'
+
+export async function getStaticPaths() {
+  // 1. Fetch all article slugs from Sanity
+  const articles = await sanityClient.fetch(`
+    *[_type == "post" && defined(slug.current)]{
+      "slug": slug.current
+    }
+  `)
+
+  // 2. Map each slug to a path param
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+  }))
+}
+
+// 3. Get the slug param for the current page request
+const { slug } = Astro.params
+
+// 4. Fetch the full article data based on that slug
+const query = `*[_type == "post" && slug.current == $slug][0]{
+  title,
+  abstract,
+  publishedAt,
+  mainImage,
+  body,
+  "author": author->{ name, image, bio, url },
+  "categories": categories[]->{ _id, title }
+}`
+
+const article = await sanityClient.fetch(query, { slug })
+
+if (!article) {
+  return Astro.redirect('/404')
+}
+
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#19181d">
+    <title>{article.title} – Articles – Mad Egg Labs</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="128x128">
+    <link rel="apple-touch-icon" sizes="128x128" href="/favicon.png">
+    <meta property="og:url" content="https://madegglabs.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mad Egg Labs">
+    {article.abstract && <meta property="og:description" content={article.abstract}>}
+    <meta property="og:image" content="https://madegglabs.com/assets/img/social.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="module" src="/assets/index.js"></script>
+  </head>
+  <body>
+    <site-header></site-header>
+    <main>
+      <article>
+        <header>
+          <h2>{article.title}</h2>
+          <p class="byline">
+            By {article.author?.url ? (
+              <a href={article.author.url} rel="author">
+                {article.author.name}
+              </a>
+            ) : (
+              article.author?.name && <span>{article.author.name}</span>
+            )}<br>
+            {article.publishedAt && <time datetime={article.publishedAt}>{formatDate(article.publishedAt)}</time>}
+          </p>
+        </header>
+        <PortableText value={article.body} components={portableTextComponents} />
+      </article>
+    </main>
+    <site-footer></site-footer>
+  </body>
+</html>

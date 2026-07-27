@@ -20,6 +20,15 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['https'],
+        }),
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',

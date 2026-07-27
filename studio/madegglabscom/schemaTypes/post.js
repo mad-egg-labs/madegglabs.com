@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'abstract',
+      title: 'Abstract / OpenGraph Description',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -43,6 +48,12 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        timeFormat: 'HH:mm',
+        displayTimeZone: 'America/Los_Angeles',
+        allowTimeZoneSwitch: false,
+      },
     }),
     defineField({
       name: 'body',
