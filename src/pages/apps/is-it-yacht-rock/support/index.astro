@@ -3,6 +3,7 @@
 import { PortableText } from 'astro-portabletext'
 import faqblock from '../../../../components/faqblock.astro'
 import { sanityClient } from '../../../../lib/sanity'
+import { portableTextComponents } from '../../../../lib/portableTextComponents'
 
 const query = `*[_type == "page" && slug.current == "support"][0]{
   title,
@@ -11,12 +12,6 @@ const query = `*[_type == "page" && slug.current == "support"][0]{
 }`
 
 const page = await sanityClient.fetch(query)
-
-const portableTextComponents = {
-  type: {
-    faqBlock: faqblock,
-  },
-}
 
 ---
 <!doctype html>

@@ -1,4 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
+import {EnvelopeIcon} from '@sanity/icons/Envelope'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -54,6 +55,22 @@ export default defineType({
                 title: 'URL',
                 name: 'href',
                 type: 'url',
+              },
+            ],
+          },
+          {
+            title: 'Email Link',
+            name: 'emailLink',
+            type: 'object',
+            icon: EnvelopeIcon,
+            fields: [
+              {
+                title: 'User / Prefix',
+                name: 'user',
+                type: 'string',
+                initialValue: 'hello',
+                placeholder: 'What comes before @madegglabs.com',
+                description: 'Required',
               },
             ],
           },
