@@ -13,12 +13,20 @@ function insertEmailLinks() {
   });
 }
 
-// dynamically create FAQs using the data embedded on the page
+// enable dynamic filtering of FAQs
 function initFAQs() {
   const container = document.getElementById('faqs');
   const data = [];
 
-  // TODO build up filtering data from the FAQs on the page
+  // build up filtering data from the FAQs on the page
+  const qs = container.querySelectorAll('details summary');
+  const as = container.querySelectorAll('details p');
+
+  for (let i = 0; i < qs.length; i += 1) {
+    const question = qs[i].innerText;
+    const answer   = as[i].innerText;
+    data.push({ question, answer });
+  }
 
   if (container) {
     enableFiltering(container, data);
