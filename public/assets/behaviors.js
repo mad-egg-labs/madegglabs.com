@@ -18,19 +18,38 @@ function initFAQs() {
   const container = document.getElementById('faqs');
   const data = [];
 
-  // build up filtering data from the FAQs on the page
-  const qs = container.querySelectorAll('details summary');
-  const as = container.querySelectorAll('details p');
-
-  for (let i = 0; i < qs.length; i += 1) {
-    const question = qs[i].innerText;
-    const answer   = as[i].innerText;
-    data.push({ question, answer });
-  }
-
   if (container) {
+    // build up filtering data from the FAQs on the page
+    const qs = container.querySelectorAll('details summary');
+    const as = container.querySelectorAll('details p');
+
+    for (let i = 0; i < qs.length; i += 1) {
+      const question = qs[i].innerText;
+      const answer   = as[i].innerText;
+      data.push({ question, answer });
+    }
+
     enableFiltering(container, data);
   }
+}
+
+function buildFAQs(container, data) {
+  let html = '';
+  if (data.length > 0) {
+    data.forEach(faq => {
+      const { question, answer } = faq;
+      html += `
+        <details>
+          <summary>${question}</summary>
+          <p>${answer}</p>
+        </details>
+      `;
+    });
+  }
+  else {
+    html = '<p><strong>No results. 🤔</strong></p>';
+  }
+  container.innerHTML = html;
 }
 
 function createSearchFilter(input) {
