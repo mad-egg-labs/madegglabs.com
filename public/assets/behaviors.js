@@ -20,14 +20,14 @@ function initFAQs() {
 
   if (container) {
     // build up filtering data from the FAQs on the page
-    const qs = container.querySelectorAll('details summary');
-    const as = container.querySelectorAll('details p');
-
-    for (let i = 0; i < qs.length; i += 1) {
-      const question = qs[i].innerText;
-      const answer   = as[i].innerText;
+    const deets = container.querySelectorAll('details');
+    deets.forEach(deet => {
+      const q = deet.querySelector('summary');
+      const a = deet.querySelector('p');
+      const question = q.textContent;
+      const answer   = a.textContent;
       data.push({ question, answer });
-    }
+    });
 
     enableFiltering(container, data);
   }
