@@ -1,0 +1,19 @@
+---
+const { node } = Astro.props
+const { title, items } = node
+import { PortableText } from 'astro-portabletext'
+
+const hasFaqs = Array.isArray(items) && items.length > 0
+---
+{hasFaqs ? (
+  <div id="faqs">
+    {items.map((item) => (
+      <details>
+        <summary>{item.question}</summary>
+        <PortableText value={item.answer} />
+      </details>
+    ))}
+  </div>
+) : (
+  <p><strong>No results. 🤔</strong></p>
+)}

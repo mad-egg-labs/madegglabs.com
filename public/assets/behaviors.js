@@ -15,33 +15,14 @@ function insertEmailLinks() {
 
 // dynamically create FAQs using the data embedded on the page
 function initFAQs() {
-  const data = window.faqData;
-  if (Array.isArray(data)) {
-    const container = document.getElementById('faqs');
-    if (container) {
-      buildFAQs(container, data);
-      enableFiltering(container, data);
-    }
-  }
-}
+  const container = document.getElementById('faqs');
+  const data = [];
 
-function buildFAQs(container, data) {
-  let html = '';
-  if (data.length > 0) {
-    data.forEach(faq => {
-      const {question, answer} = faq;
-      html += `
-        <details>
-          <summary>${question}</summary>
-          <p>${answer}</p>
-        </details>
-      `;
-    });
+  // TODO build up filtering data from the FAQs on the page
+
+  if (container) {
+    enableFiltering(container, data);
   }
-  else {
-    html = '<p><strong>No results. 🤔</strong></p>';
-  }
-  container.innerHTML = html;
 }
 
 function createSearchFilter(input) {
