@@ -1,9 +1,10 @@
 ---
 
-import { PortableText } from 'astro-portabletext'
-import { sanityClient } from '../../lib/sanity'
+import   BaseLayout               from '../../layouts/BaseLayout.astro'
+import { PortableText }           from 'astro-portabletext'
+import { sanityClient }           from '../../lib/sanity'
 import { portableTextComponents } from '../../lib/portableTextComponents'
-import { formatDate } from '../../lib/utils'
+import { formatDate }             from '../../lib/utils'
 
 export async function getStaticPaths() {
   // 1. Fetch all article slugs from Sanity
@@ -39,49 +40,33 @@ if (!article) {
   return Astro.redirect('/404')
 }
 
+const ogImageUrl = article.mainImage
+  ? builder.image(article.mainImage).width(1200).height(630).url()
+  : undefined
+
 ---
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#19181d">
-    <title>{article.title} – Articles – Mad Egg Labs</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="128x128">
-    <link rel="apple-touch-icon" sizes="128x128" href="/favicon.png">
-    <meta property="og:url" content="https://madegglabs.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mad Egg Labs">
-    {article.abstract && <meta property="og:description" content={article.abstract}>}
-    <meta property="og:image" content="https://madegglabs.com/assets/img/social.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/styles.css">
-    <script type="module" src="/assets/index.js"></script>
-  </head>
-  <body>
-    <site-header></site-header>
-    <main>
-      <article>
-        <header>
-          <h2>{article.title}</h2>
-          <p class="byline">
-            By {article.author?.url ? (
-              <a href={article.author.url} rel="author">
-                {article.author.name}
-              </a>
-            ) : (
-              article.author?.name && <span>{article.author.name}</span>
-            )}<br>
-            {article.publishedAt && <time datetime={article.publishedAt}>{formatDate(article.publishedAt)}</time>}
-          </p>
-        </header>
-        <PortableText value={article.body} components={portableTextComponents} />
-      </article>
-    </main>
-    <site-footer></site-footer>
-  </body>
-</html>
+
+<BaseLayout
+  title={`${article.title} – Articles – Mad Egg Labs`}
+  description={article.abstract}
+  image={ogImageUrl}
+  ogTitle={article.title}
+  ogType="article"
+>
+  <article>
+    <header>
+      <h2>{article.title}</h2>
+      <p class="byline">
+        By {article.author?.url ? (
+          <a href={article.author.url} rel="author">
+            {article.author.name}
+          </a>
+        ) : (
+          article.author?.name && <span>{article.author.name}</span>
+        )}<br>
+        {article.publishedAt && <time datetime={article.publishedAt}>{formatDate(article.publishedAt)}</time>}
+      </p>
+    </header>
+    <PortableText value={article.body} components={portableTextComponents} />
+  </article>
+</BaseLayout>

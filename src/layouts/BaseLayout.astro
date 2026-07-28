@@ -5,6 +5,7 @@ const {
   description  = 'Mad Egg Labs, LLC provides software development and consulting services including mobile web development, CMS integrations, and iOS app development.',
   image        = 'https://madegglabs.com/assets/img/social.jpg',
   canonicalUrl = Astro.url.href,
+  ogTitle      = 'Mad Egg Labs',
   ogType       = 'website',
 } = Astro.props
 
@@ -23,7 +24,7 @@ const {
     <link rel="apple-touch-icon" sizes="128x128" href="/favicon.png">
     <meta property="og:url" content={canonicalUrl}>
     <meta property="og:type" content={ogType}>
-    <meta property="og:title" content={title}>
+    <meta property="og:title" content={ogTitle}>
     <meta property="og:description" content={description}>
     <meta property="og:image" content={image}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
