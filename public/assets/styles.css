@@ -72,7 +72,7 @@ site-header header {
 
 site-header header figure img {
   filter: drop-shadow(var(--shadow));
-  height: 25vh;
+  height: clamp(250px, 20vh, 400px);
   width: auto;
 }
   .iiyr site-header header figure img {
