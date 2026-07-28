@@ -76,7 +76,7 @@ site-header header figure img {
   width: auto;
 }
   .iiyr site-header header figure img {
-    height: 28vh;
+    height: clamp(300px, 24vh, 480px);
   }
 
 site-header header nav a {
