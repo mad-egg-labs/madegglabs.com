@@ -8,7 +8,8 @@
 }
 
 :root {
-  --color-body: #e7e7e7;
+  --color-body-text: #e7e7e7;
+  --color-link-hovered: white;
   --color-decorative: #666;
   --color-deemphasized: #ccc;
   --shadow: rgba(0,0,0,0.67) 0.1em 0.1em 0.2em;
@@ -23,7 +24,7 @@ html, body {
 
 body {
   background-color: #19181d;
-  color: var(--color-body);
+  color: var(--color-body-text);
   font-family: system-ui;
   font-feature-settings: "ss06";
   font-size: clamp(14px, 1.5vw + 12px, 24px);
@@ -64,7 +65,7 @@ site-header header, main, footer {
 }
 
 site-header header {
-  border-bottom: solid 1px var(--color-body);
+  border-bottom: solid 1px var(--color-body-text);
   padding-bottom: 2rem;
   padding-top: 2rem;
   text-align: center;
@@ -127,7 +128,7 @@ section, article {
 }
 
 footer {
-  border-top: solid 1px var(--color-body);
+  border-top: solid 1px var(--color-body-text);
   font-size: 85%;
   padding: 2rem 0;
   text-align: center;
@@ -168,11 +169,11 @@ aside {
 }
 
 a {
-  color: var(--color-body);
+  color: var(--color-body-text);
 }
 
 a:hover {
-  color: white;
+  color: var(--color-link-hovered);
 }
 
 figure a {
