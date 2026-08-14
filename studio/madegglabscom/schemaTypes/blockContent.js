@@ -17,6 +17,9 @@ export default defineType({
   type: 'array',
   of: [
     defineArrayMember({
+      type: 'avatarImage',
+    }),
+    defineArrayMember({
       title: 'Block',
       type: 'block',
       styles: [
@@ -39,18 +42,6 @@ export default defineType({
         ],
         annotations: [
           {
-            title: 'URL',
-            name: 'link',
-            type: 'object',
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-              },
-            ],
-          },
-          {
             title: 'Email Link',
             name: 'emailLink',
             type: 'object',
@@ -66,15 +57,30 @@ export default defineType({
               },
             ],
           },
+          {
+            title: 'URL',
+            name: 'link',
+            type: 'object',
+            fields: [
+              {
+                title: 'URL',
+                name: 'href',
+                type: 'url',
+              },
+            ],
+          },
         ],
       },
+    }),
+    defineArrayMember({
+      type: 'faqBlock',
     }),
     defineArrayMember({
       type: 'image',
       options: { hotspot: true },
     }),
     defineArrayMember({
-      type: 'faqBlock',
+      type: 'pullquote',
     }),
   ],
 })

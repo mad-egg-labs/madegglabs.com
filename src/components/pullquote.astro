@@ -1,0 +1,8 @@
+---
+const { node } = Astro.props
+
+const quoteText = node?.text || ''
+---
+<aside class="pullquote" aria-hidden="true">
+  <p>{quoteText}</p>
+</aside>
