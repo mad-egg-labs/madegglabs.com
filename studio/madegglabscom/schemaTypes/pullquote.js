@@ -1,11 +1,11 @@
 import { defineType, defineField } from 'sanity'
-import { BlockquoteIcon } from '@sanity/icons/Blockquote'
+import { DoubleQuoteIcon } from '@sanity/icons/DoubleQuote'
 
 export default defineType({
   name: 'pullquote',
   title: 'Pull Quote',
   type: 'object',
-  icon: BlockquoteIcon,
+  icon: DoubleQuoteIcon,
   fields: [
     defineField({
       name: 'text',
