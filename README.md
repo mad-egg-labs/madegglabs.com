@@ -11,3 +11,5 @@
 Content is managed in [Sanity.io](https://madegglabscom.sanity.studio) and deployed via Static Site Generation (SSG) using Astro.
 
 Deploy content schema changes by running the following from within the `/studio` directory: `npx sanity@latest deploy`
+
+Deploy the site by merging changes to the `main` branch.
