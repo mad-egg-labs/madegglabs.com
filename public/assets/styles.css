@@ -89,6 +89,17 @@ section, article {
   margin: 3rem 0;
 }
 
+main figure {
+  border: solid 0.25rem var(--color-deemphasized);
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+  padding: 0;
+}
+  main figure img {
+    height: auto;
+    width: 100%;
+  }
+
 .byline time {
   font-size: 80%;
   font-style: italic;

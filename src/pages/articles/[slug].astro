@@ -25,12 +25,33 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 // 4. Fetch the full article data based on that slug
+/*
 const query = `*[_type == "post" && slug.current == $slug][0]{
   title,
   abstract,
   publishedAt,
   mainImage,
   body,
+  "author": author->{ name, image, bio, url },
+  "categories": categories[]->{ _id, title }
+}`
+*/
+const query = `*[_type == "post" && slug.current == $slug][0]{
+  title,
+  abstract,
+  publishedAt,
+  mainImage {
+    asset,
+    alt,
+    caption
+  },
+  body[] {
+    ...,
+    _type == "image" => {
+      ...,
+      asset->
+    }
+  },
   "author": author->{ name, image, bio, url },
   "categories": categories[]->{ _id, title }
 }`

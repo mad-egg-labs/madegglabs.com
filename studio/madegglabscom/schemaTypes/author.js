@@ -35,6 +35,14 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alternative Text',
+          type: 'string',
+          description: 'Important for accessibility and SEO.',
+        }),
+      ],
     }),
     defineField({
       name: 'bio',
