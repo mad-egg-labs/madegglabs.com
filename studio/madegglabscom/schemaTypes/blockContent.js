@@ -1,4 +1,4 @@
-import {defineType, defineArrayMember} from 'sanity'
+import {defineType, defineArrayMember, defineField} from 'sanity'
 import {EnvelopeIcon} from '@sanity/icons/Envelope'
 
 /**

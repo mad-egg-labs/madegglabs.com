@@ -2,7 +2,7 @@
 
 import   BaseLayout               from '../../layouts/BaseLayout.astro'
 import { PortableText }           from 'astro-portabletext'
-import { sanityClient }           from '../../lib/sanity'
+import { sanityClient, urlFor }   from '../../lib/sanity'
 import { portableTextComponents } from '../../lib/portableTextComponents'
 import   pullquote                from '../../components/pullquote.astro'
 import { formatDate }             from '../../lib/utils'
@@ -63,7 +63,7 @@ if (!article) {
 }
 
 const ogImageUrl = article.mainImage
-  ? builder.image(article.mainImage).width(1200).height(630).url()
+  ? urlFor(article.mainImage).width(1200).height(630).url()
   : undefined
 
 ---

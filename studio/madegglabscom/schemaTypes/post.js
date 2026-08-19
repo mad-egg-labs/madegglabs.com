@@ -37,6 +37,20 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alternative Text',
+          type: 'string',
+          description: 'Describe the image for screen readers and search engines.',
+          validation: (Rule) => Rule.required().error('Alt text is required for accessibility.'),
+        }),
+        defineField({
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+        }),
+      ],
     }),
     defineField({
       name: 'categories',
