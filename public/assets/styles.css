@@ -96,6 +96,7 @@ main figure {
   padding: 0;
 }
   main figure img {
+    display: block;
     height: auto;
     width: 100%;
   }
