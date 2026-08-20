@@ -29,6 +29,7 @@ const { slug } = Astro.params
 const query = `*[_type == "post" && slug.current == $slug][0]{
   title,
   abstract,
+  "ogDescription": coalesce(ogDescription, abstract),
   publishedAt,
   mainImage,
   body,
@@ -70,7 +71,7 @@ const ogImageUrl = article.mainImage
 
 <BaseLayout
   title={`${article.title} – Articles – Mad Egg Labs`}
-  description={article.abstract}
+  description={article.ogDescription}
   image={ogImageUrl}
   ogTitle={article.title}
   ogType="article"

@@ -12,8 +12,18 @@ export default defineType({
     }),
     defineField({
       name: 'abstract',
-      title: 'Abstract / OpenGraph Description',
-      type: 'string',
+      title: 'Abstract',
+      description: '1–3 sentences shown on index and topic landing pages.',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
+      name: 'ogDescription',
+      title: 'OpenGraph Description',
+      description: 'No more than 160 characters for social shares and SEO tags. Falls back to Abstract if empty.',
+      type: 'text',
+      rows: 2,
+      validation: (Rule) => Rule.max(160).warning('Descriptions over 160 characters will be truncated by some platforms.'),
     }),
     defineField({
       name: 'slug',
