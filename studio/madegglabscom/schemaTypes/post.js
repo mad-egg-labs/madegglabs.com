@@ -15,7 +15,7 @@ export default defineType({
       title: 'Abstract',
       description: '1–3 sentences shown on index and topic landing pages.',
       type: 'text',
-      rows: 3,
+      rows: 5,
     }),
     defineField({
       name: 'ogDescription',

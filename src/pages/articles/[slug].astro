@@ -25,21 +25,10 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 // 4. Fetch the full article data based on that slug
-/*
 const query = `*[_type == "post" && slug.current == $slug][0]{
   title,
   abstract,
-  "ogDescription": coalesce(ogDescription, abstract),
-  publishedAt,
-  mainImage,
-  body,
-  "author": author->{ name, image, bio, url },
-  "categories": categories[]->{ _id, title }
-}`
-*/
-const query = `*[_type == "post" && slug.current == $slug][0]{
-  title,
-  abstract,
+  ogDescription,
   publishedAt,
   mainImage {
     asset,
@@ -71,7 +60,7 @@ const ogImageUrl = article.mainImage
 
 <BaseLayout
   title={`${article.title} – Articles – Mad Egg Labs`}
-  description={article.ogDescription}
+  description={article.ogDescription || article.abstract}
   image={ogImageUrl}
   ogTitle={article.title}
   ogType="article"
