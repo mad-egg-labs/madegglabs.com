@@ -272,6 +272,7 @@ li {
 }
   .gallery figure {
     align-items: center;
+    border: none;
     display: flex;
     flex-direction: column;
     flex: 0 0 auto; /* prevent the figures from shrinking */
