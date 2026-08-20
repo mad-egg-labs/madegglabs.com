@@ -286,6 +286,7 @@ li {
       margin-right: auto;
     }
     .gallery figure img {
+      border: none;
       border-radius: 8px;
       filter: drop-shadow(var(--shadow));
       flex: 1 1 auto;      /* allow captions to steal height */
