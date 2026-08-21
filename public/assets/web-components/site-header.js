@@ -27,7 +27,7 @@ class SiteHeader extends HTMLElement {
     const slug    = parts.length > 2 ? parts[2] : null;
 
     // are we on a 404 page?
-    const is404 = this.dataset.pageType === '404' || section.includes('404');
+    const is404 = this.dataset.status === '404' || section.includes('404');
 
     // Usage: active.about, active.articles, etc.
     const active = {
