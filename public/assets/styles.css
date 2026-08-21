@@ -79,6 +79,9 @@ site-header header figure img {
   .iiyr site-header header figure img {
     height: clamp(300px, 24vh, 480px);
   }
+  .four site-header header figure img {
+    height: clamp(300px, 24vh, 480px);
+  }
 
 site-header header nav a {
   display: inline-block;
