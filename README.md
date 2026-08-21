@@ -8,8 +8,8 @@
 - CSS
 - JavaScript
 
-Content is managed in [Sanity.io](https://madegglabscom.sanity.studio) and deployed via Static Site Generation (SSG) using Astro.
+Content is managed in [Sanity.io](https://madegglabscom.sanity.studio) and deployed via Static Site Generation (SSG) using [Astro](https://astro.build/).
 
 Deploy content schema changes by running the following from within the `/studio` directory: `npx sanity@latest deploy`
 
-Deploy the site by merging changes to the `main` branch.
+Deploy the site by merging changes to the `main` branch or by publishing content from within Sanity.
