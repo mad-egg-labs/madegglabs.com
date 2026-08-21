@@ -30,43 +30,41 @@ const articles = await sanityClient.fetch(query)
 <BaseLayout
   title={`Articles – Mad Egg Labs`}
 >
-    <main>
-      <section>
-        {articles.length > 0 ? (
-          articles.map((article) => (
-            <article class="card">
-              {article.mainImage && (
-                <figure>
-                  <img
-                    src={article.mainImage.asset.url}
-                    alt={article.mainImage.alt || article.title}
-                  />
-                </figure>
-              )}
-              <h2>
-                <a href={`/articles/${article.slug}`}>{article.title}</a>
-              </h2>
-              {article.publishedAt && (
-                <time datetime={article.publishedAt}>
-                  {formatDate(article.publishedAt)}
-                </time>
-              )}
-              <p>{article.abstract}</p>
-              {article.categories?.length > 0 && (
-                <ul class="categories">
-                  {article.categories.map((cat) => (
-                    <li>{cat.title}</li>
-                  ))}
-                </ul>
-              )}
-            </article>
-          ))
-        ) : (
-          <div class="empty-state">
-            <h2>No articles found</h2>
-            <p>Check back later for new posts!</p>
-          </div>
-        )}
-      </section>
-    </main>
+  <section>
+    {articles.length > 0 ? (
+      articles.map((article) => (
+        <article class="card">
+          {article.mainImage && (
+            <figure>
+              <img
+                src={article.mainImage.asset.url}
+                alt={article.mainImage.alt || article.title}
+              />
+            </figure>
+          )}
+          <h2>
+            <a href={`/articles/${article.slug}`}>{article.title}</a>
+          </h2>
+          {article.publishedAt && (
+            <time datetime={article.publishedAt}>
+              {formatDate(article.publishedAt)}
+            </time>
+          )}
+          <p>{article.abstract}</p>
+          {article.categories?.length > 0 && (
+            <ul class="categories">
+              {article.categories.map((cat) => (
+                <li>{cat.title}</li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))
+    ) : (
+      <div class="empty-state">
+        <h2>No articles found</h2>
+        <p>Check back later for new posts!</p>
+      </div>
+    )}
+  </section>
 </BaseLayout>

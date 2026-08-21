@@ -31,7 +31,16 @@ class SiteHeader extends HTMLElement {
       [section]: true
     };
 
-    const logo = 'apps' === section ? 'hat-egg.png' : 'mad-egg.png';
+    // set which egg to show
+    let logo = 'mad-egg.png';
+    if ('apps' === section) {
+      logo = 'hat-egg.png';
+    }
+    else if (section.includes('404')) {
+      logo = 'mad-egg-construction.png';
+    }
+
+
     const h1 = section ? '<h1><a href="/">Mad Egg Labs</a></h1>' : '<h1>Mad Egg Labs</h1>';
     const nav = section ? '' : `
       <nav>

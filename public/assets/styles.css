@@ -89,16 +89,27 @@ section, article {
   margin: 3rem 0;
 }
 
-main figure {
-  border: solid 0.25rem var(--color-deemphasized);
-  box-shadow: var(--shadow);
+figure {
   margin: 1rem 0;
   padding: 0;
 }
-  main figure img {
-    display: block;
-    height: auto;
-    width: 100%;
+  article figure {
+    border: solid 0.25rem var(--color-deemphasized);
+    box-shadow: var(--shadow);
+  }
+    article figure img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+figcaption {
+  color: var(--color-deemphasized);
+  font-size: 85%;
+  font-style: italic;
+}
+  figcaption em {
+    font-style: normal;
   }
 
 .byline time {
@@ -151,7 +162,7 @@ footer p {
 }
 
 footer .footnotes {
-  opacity: 0.67;
+  color: var(--color-deemphasized);
 }
 
 h1, h2, h3 {
@@ -193,6 +204,10 @@ figure a {
   text-decoration: none;
 }
 
+figcaption a {
+  text-decoration: underline;
+}
+
 img.avatar {
   border: solid 8px var(--color-decorative);
   bottom: -1.25rem;
@@ -210,7 +225,7 @@ ul, ol {
 }
 
 li {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .pullquote {
@@ -311,11 +326,11 @@ blockquote {
   position: relative;
 }
   blockquote p:before {
+    color: var(--color-deemphasized);
     content: "“";
     font-family: Bahianita, serif;
     font-size: 4rem;
     left: -2rem;
-    opacity: 0.67;
     position: absolute;
     top: -1rem;
   }
