@@ -7,6 +7,7 @@ const {
   canonicalUrl = Astro.url.href,
   ogTitle      = 'Mad Egg Labs',
   ogType       = 'website',
+  bodyClasses  = '',
 } = Astro.props
 
 ---
@@ -34,7 +35,7 @@ const {
     <script async src="https://cdn.seline.com/seline.js" data-token="43939c04f99b3c2" data-outbound="true"></script>
     <script type="module" src="/assets/index.js"></script>
   </head>
-  <body>
+  <body class={bodyClasses || undefined}>
     <site-header></site-header>
     <main>
       <slot />

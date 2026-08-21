@@ -1,5 +1,6 @@
 ---
 
+import   BaseLayout               from '../../../../layouts/BaseLayout.astro'
 import { PortableText }           from 'astro-portabletext'
 import   faqblock                 from '../../../../components/faqblock.astro'
 import { sanityClient }           from '../../../../lib/sanity'
@@ -14,30 +15,13 @@ const query = `*[_type == "page" && slug.current == "support"][0]{
 const page = await sanityClient.fetch(query)
 
 ---
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#19181d">
-    <title>Support – Is It Yacht Rock? – Mad Egg Labs</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="128x128">
-    <link rel="apple-touch-icon" sizes="128x128" href="/favicon.png">
-    <meta property="og:url" content="https://madegglabs.com/apps/is-it-yacht-rock/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Is It Yacht Rock? by Mad Egg Labs">
-    <meta property="og:description" content="Is It Yacht Rock? is an iOS app by Mad Egg Labs that tells you whether a song is yacht rock. Mad Egg Labs, LLC provides software development and consulting services including mobile web development, CMS integrations, and iOS app development.">
-    <meta property="og:image" content="https://madegglabs.com/assets/img/social-iiyr.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/styles.css">
-    <script type="module" src="/assets/index.js"></script>
-  </head>
-  <body class="iiyr">
-    <site-header></site-header>
+
+<BaseLayout
+  title={`Support – Is It Yacht Rock? – Mad Egg Labs`}
+  description={`Is It Yacht Rock? is an iOS app by Mad Egg Labs that tells you whether a song is yacht rock. Mad Egg Labs provides software development and consulting services including iOS app development.`}
+  image={`https://madegglabs.com/assets/img/social-iiyr.jpg`}
+  ogTitle={`Is It Yacht Rock? by Mad Egg Labs`}
+>
     <main>
       <section>
         <h2><a href="../">Is It Yacht Rock?</a> – Support</h2>
@@ -53,6 +37,4 @@ const page = await sanityClient.fetch(query)
         <p>Have a question that’s not answered here? Email us at <span class="email-link" data-user="support"></span>.</p>
       </section>
     </main>
-    <site-footer></site-footer>
-  </body>
-</html>
+</BaseLayout>

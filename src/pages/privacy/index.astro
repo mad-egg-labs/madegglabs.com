@@ -1,27 +1,12 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#19181d">
-    <title>Privacy Policy – Mad Egg Labs</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="128x128">
-    <link rel="apple-touch-icon" sizes="128x128" href="/favicon.png">
-    <meta property="og:url" content="https://madegglabs.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mad Egg Labs">
-    <meta property="og:description" content="Mad Egg Labs, LLC provides software development and consulting services including mobile web development, CMS integrations, and iOS app development.">
-    <meta property="og:image" content="https://madegglabs.com/assets/img/social.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bahianita:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/styles.css">
-    <script type="module" src="/assets/index.js"></script>
-  </head>
-  <body>
-    <site-header></site-header>
+---
+
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+---
+
+<BaseLayout
+  title={`Privacy Policy – Mad Egg Labs`}
+>
     <main>
       <section>
         <h2>Privacy Policy for Mad Egg Labs, LLC</h2>
@@ -57,6 +42,4 @@
         <p>Questions? Reach out to us at <span class="email-link" data-user="privacy"></span>.</p>
       </section>
     </main>
-    <site-footer></site-footer>
-  </body>
-</html>
+</BaseLayout>
