@@ -26,6 +26,9 @@ class SiteHeader extends HTMLElement {
     const section = parts[1];
     const slug    = parts.length > 2 ? parts[2] : null;
 
+    // are we on a 404 page?
+    const is404 = this.dataset.pageType === 404 || section.includes('404');
+
     // Usage: active.about, active.articles, etc.
     const active = {
       [section]: true
@@ -36,7 +39,7 @@ class SiteHeader extends HTMLElement {
     if ('apps' === section) {
       logo = 'hat-egg.png';
     }
-    else if (section.includes('404')) {
+    else if (is404) {
       logo = 'mad-egg-construction.png';
     }
 

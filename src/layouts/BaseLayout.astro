@@ -8,6 +8,7 @@ const {
   ogTitle      = 'Mad Egg Labs',
   ogType       = 'website',
   bodyClasses  = '',
+  pageType     = 200,
 } = Astro.props
 
 ---
@@ -36,7 +37,7 @@ const {
     <script type="module" src="/assets/index.js"></script>
   </head>
   <body class={bodyClasses || undefined}>
-    <site-header></site-header>
+    <site-header pageType={pageType}></site-header>
     <main>
       <slot />
     </main>
