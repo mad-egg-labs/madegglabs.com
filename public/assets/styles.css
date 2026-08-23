@@ -96,15 +96,18 @@ figure {
   margin: 1rem 0;
   padding: 0;
 }
-  article figure {
-    border: solid 0.25rem var(--color-deemphasized);
-    box-shadow: var(--shadow);
+  figure img {
+    height: auto;
+    width: 100%;
   }
-    article figure img {
-      display: block;
-      height: auto;
-      width: 100%;
-    }
+
+article figure {
+  border: solid 0.25rem var(--color-deemphasized);
+  box-shadow: var(--shadow);
+}
+  article figure img {
+    display: block;
+  }
 
 figcaption {
   color: var(--color-deemphasized);
