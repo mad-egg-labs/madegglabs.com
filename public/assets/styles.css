@@ -118,6 +118,10 @@ figcaption {
     font-style: normal;
   }
 
+code {
+  font-size: 85%;
+}
+
 .byline time {
   font-size: 80%;
   font-style: italic;
