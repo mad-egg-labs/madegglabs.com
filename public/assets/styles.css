@@ -1,8 +1,18 @@
 /* Copyright (c) 2026 Mad Egg Labs, Inc */
 
-/* narrow typefaces at reduced sizes to minimize cumulative layout shift (CLS) */
 @font-face {
-  font-family: "Bahianita-Fallback";
+  font-family: 'Bahianita';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/font/bahianita.woff2') format('woff2');
+}
+
+/* use narrow typefaces at reduced sizes to minimize cumulative layout shift (CLS) */
+@font-face {
+  font-family: 'Bahianita Fallback';
+  font-style: normal;
+  font-weight: 400;
   src: local("Avenir Next Condensed"), local("Arial Narrow"), local("Roboto Condensed");
   size-adjust: 75%;
 }
@@ -177,7 +187,7 @@ footer .footnotes {
 
 h1, h2, h3 {
   clear: both;
-  font-family: Bahianita, "Bahianita-Fallback", sans-serif;
+  font-family: Bahianita, "Bahianita Fallback", sans-serif;
   font-weight: normal;
 }
 
