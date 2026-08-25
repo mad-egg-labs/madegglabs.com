@@ -24,15 +24,13 @@ const page = await sanityClient.fetch(query)
 >
   <section>
     <h2><a href="../">Is It Yacht Rock?</a> – Support</h2>
-    <form>
+    <div role="search">
       <label>
         Filter the FAQs by typing something into the search box.<br>
         <input type="search" placeholder="yachtski">
       </label>
-    </form>
-    <div id="faqs">
-      <PortableText value={page.body} components={portableTextComponents} />
     </div>
+    <PortableText value={page.body} components={portableTextComponents} />
     <p>Have a question that’s not answered here? Email us at <span class="email-link" data-user="support"></span>.</p>
   </section>
 </BaseLayout>

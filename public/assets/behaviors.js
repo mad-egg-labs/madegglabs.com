@@ -63,7 +63,7 @@ function createSearchFilter(input) {
 
 function enableFiltering(container, data) {
   // prevent the page from reloading if the user hits `return`
-  const form = document.querySelector('form');
+  const form = document.querySelector('[role="search"]');
   if (form) {
     form.addEventListener('submit', evt => {
       evt.preventDefault();
