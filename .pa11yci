@@ -9,6 +9,12 @@
   },
   "urls": [
     "http://localhost:4321/",
+    "http://localhost:4321/articles/",
+    "http://localhost:4321/articles/you-deserve-a-great-website/",
+    "http://localhost:4321/articles/dont-make-your-customers-work/",
+    "http://localhost:4321/apps/is-it-yacht-rock/",
+    "http://localhost:4321/apps/is-it-yacht-rock/support/",
+    "http://localhost:4321/privacy/",
     "http://localhost:4321/404"
   ]
 }
