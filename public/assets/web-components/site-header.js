@@ -35,12 +35,12 @@ class SiteHeader extends HTMLElement {
     };
 
     // set which egg to show
-    let logo = 'mad-egg.png';
+    let logo = 'mad-egg';
     if (is404) {
-      logo = 'mad-egg-construction.png';
+      logo = 'mad-egg-construction';
     }
     else if ('apps' === section) {
-      logo = 'hat-egg.png';
+      logo = 'hat-egg';
     }
 
     const h1 = section ? '<h1><a href="/">Mad Egg Labs</a></h1>' : '<h1>Mad Egg Labs</h1>';
@@ -62,7 +62,10 @@ class SiteHeader extends HTMLElement {
     this.innerHTML = `
       <header>
         <figure aria-hidden="true">
-          <img src="/assets/img/${logo}" alt="">
+          <picture>
+            <source srcset="/assets/img/${logo}.webp" type="image/webp">
+            <img src="/assets/img/${logo}.png" alt="">
+          </picture>
         </figure>
         ${h1}
         ${nav}
