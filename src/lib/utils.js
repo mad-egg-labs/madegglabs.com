@@ -9,3 +9,11 @@ export function formatDate(dateString) {
     timeZone: 'UTC',
   })
 }
+
+export function slugify(text) {
+  const slug = text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-');
+  return slug;
+}
