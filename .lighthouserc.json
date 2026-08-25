@@ -11,7 +11,7 @@
         "http://localhost:4321/apps/is-it-yacht-rock/",
         "http://localhost:4321/apps/is-it-yacht-rock/support/",
         "http://localhost:4321/privacy/",
-        "http://localhost:4321/404"
+        "http://localhost:4321/404.html"
       ]
     },
     "assert": {
