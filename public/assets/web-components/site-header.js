@@ -64,7 +64,7 @@ class SiteHeader extends HTMLElement {
         <figure aria-hidden="true">
           <picture>
             <source srcset="/assets/img/${logo}.webp" type="image/webp">
-            <img src="/assets/img/${logo}.png" alt="">
+            <img src="/assets/img/${logo}.png" fetchpriority="high" alt="">
           </picture>
         </figure>
         ${h1}
