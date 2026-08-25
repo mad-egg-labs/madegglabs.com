@@ -1,0 +1,33 @@
+name: Pa11y CI Accessibility Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pa11y:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Astro Site
+        run: npm run build
+
+      - name: Run pa11y-ci Audit
+        run: |
+          npx serve dist -p 4321 &
+          npx wait-on http://localhost:4321
+          npx pa11y-ci
