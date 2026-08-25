@@ -37,7 +37,7 @@ class SiteHeader extends HTMLElement {
     // set which egg to show
     let logo = 'mad-egg';
     if (is404) {
-      logo = 'mad-egg-construction';
+      logo = 'construction-egg';
     }
     else if ('apps' === section) {
       logo = 'hat-egg';
