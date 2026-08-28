@@ -8,7 +8,7 @@
 - CSS
 - JavaScript
 
-Content is managed in [Sanity.io](https://madegglabscom.sanity.studio) and deployed on [Netlify](https://www.netlify.com/) using [Astro](https://astro.build/)’s Static Site Generation (SSG) feature.
+Content is managed in [Sanity.io](https://www.sanity.io/@okSpIQONS) and deployed on [Netlify](https://www.netlify.com/) using [Astro](https://astro.build/)’s Static Site Generation (SSG) feature.
 
 Deploy content schema changes by running the following from within the `/studio` directory: `npx sanity@latest deploy`
 
