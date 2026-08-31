@@ -19,7 +19,7 @@
 
 :root {
   --color-body-text: #e7e7e7;
-  --color-link-hovered: white;
+  --color-accent: #ffc107;
   --color-decorative: #666;
   --color-deemphasized: #ccc;
   --shadow: rgba(0,0,0,0.67) 0.1em 0.1em 0.2em;
@@ -208,7 +208,7 @@ h3 {
 }
 
 aside {
-  border-left: solid 8px var(--color-decorative);
+  border-left: solid 8px var(--color-accent);
   padding-left: 2rem;
 }
 
@@ -217,7 +217,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-link-hovered);
+  color: var(--color-accent);
 }
 
 figure a {
@@ -249,7 +249,7 @@ li {
 }
 
 .pullquote {
-  border-left: solid 0.25rem var(--color-decorative);
+  border-left: solid 0.25rem var(--color-accent);
   color: var(--color-deemphasized);
   margin: 3rem 0 3rem -2rem;
 }
