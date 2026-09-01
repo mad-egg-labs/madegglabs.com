@@ -22,6 +22,8 @@ const query = `*[_type == "page" && slug.current == "home"][0]{
 const page = await sanityClient.fetch(query)
 
 ---
-<BaseLayout>
+<BaseLayout
+  bodyClasses="home sweet home"
+>
   <PortableText value={page.body} components={portableTextComponents} />
 </BaseLayout>

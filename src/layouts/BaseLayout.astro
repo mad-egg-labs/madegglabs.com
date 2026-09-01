@@ -39,7 +39,17 @@ const {
     <script type="module" src="/assets/index.js"></script>
   </head>
   <body class={bodyClasses || undefined}>
-    <site-header data-status={status}></site-header>
+    <site-header data-status={status}>
+      <header slot="header">
+        <figure aria-hidden="true">
+          <picture>
+            <source srcset="/assets/img/mad-egg.webp" type="image/webp">
+            <img src="/assets/img/mad-egg.png" fetchpriority="high" alt="">
+          </picture>
+        </figure>
+        <h1>Mad Egg Labs</h1>
+      </header>
+    </site-header>
     <main>
       <slot />
     </main>

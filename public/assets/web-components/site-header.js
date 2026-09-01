@@ -1,63 +1,15 @@
 class SiteHeader extends HTMLElement {
   connectedCallback() {
-    const buildBreadcrumb = () => {
-      // grab reference to element where we'll insert our HTML: <main><article>
-      const article = document.querySelector('main > article');
+    // parse path to understand what page we're on
+    const parts   = location.pathname.split('/').filter(Boolean);
+    const section = parts[0] || '';
+    const slug    = parts[1] || null;
+    const is404   = this.dataset.status === '404' || section.includes('404');
 
-      // grab reference to the page's title: <main><article><header><h2>
-      const title = article.querySelector('header > h2').innerText;
-
-      let lis = '';
-      const html = `
-        <nav aria-label="Breadcrumb">
-          <ol class="breadcrumbs">
-            <li><a href="/">Home</a></li>
-            <li><a href="/articles/">Articles</a></li>
-            <li><a href="/articles/${slug}/" aria-current="page">${title}</a></li>
-          </ol>
-        </nav>
-      `;
-
-      article.insertAdjacentHTML('afterbegin', html);
-    };
-
-    // parse pathname
-    const parts   = location.pathname.split('/');
-    const section = parts[1];
-    const slug    = parts.length > 2 ? parts[2] : null;
-
-    // are we on a 404 page?
-    const is404 = this.dataset.status === '404' || section.includes('404');
-
-    // Usage: active.about, active.articles, etc.
-    const active = {
-      [section]: true
-    };
-
-    // set which egg to show
-    let logo = 'mad-egg';
-    if (is404) {
-      logo = 'construction-egg';
-    }
-    else if ('apps' === section) {
-      logo = 'hat-egg';
-    }
-
-    const h1 = section ? '<h1><a href="/">Mad Egg Labs</a></h1>' : '<h1>Mad Egg Labs</h1>';
-    const nav = section ? '' : `
-      <nav>
-        <p>
-          <a href="#about">About</a> •
-          <a href="#services">Services</a> •
-          <a href="#contact">Contact</a>
-        </p>
-      </nav>
-    `;
-
-    // no breadcrumb on the /articles landing page
-    if ('articles' === section && slug) {
-      document.addEventListener('DOMContentLoaded', buildBreadcrumb);
-    }
+    // build the parts
+    const logo = this.buildLogo(section, is404);
+    const h1   = this.buildH1(section);
+    const nav  = this.buildNav(section);
 
     this.innerHTML = `
       <header>
@@ -72,14 +24,75 @@ class SiteHeader extends HTMLElement {
       </header>
     `;
 
-    if (section) {
-      // matches <a href="#about">, <a href="/about">, <a href="/about/">, etc.
-      const activeLink = this.querySelector(`nav a[href*="${section}"]`);
-      if (activeLink) {
-        activeLink.setAttribute('aria-current', 'page');
-        activeLink.classList.add('active');
-      }
+    // no breadcrumb on the /articles landing page
+    if ('articles' === section && slug) {
+      window.requestAnimationFrame(this.buildBreadcrumb);
     }
+  }
+
+  // figure out what logo to use
+  buildLogo(section, is404) {
+    // set which egg to show
+    let logo = 'mad-egg';
+    if (is404) {
+      logo = 'construction-egg';
+    }
+    else if ('apps' === section) {
+      logo = 'hat-egg';
+    }
+    return logo;
+  }
+
+  // figure out whether to link the <h1>
+  buildH1(section) {
+    return section ? '<h1><a href="/">Mad Egg Labs</a></h1>' : '<h1>Mad Egg Labs</h1>';
+  }
+
+  // figure out whether there's an in-page nav
+  buildNav(section) {
+    return section ? '' : `
+      <nav>
+        <p>
+          <a href="#about">About</a> •
+          <a href="#services">Services</a> •
+          <a href="#contact">Contact</a>
+        </p>
+      </nav>
+    `;
+  }
+
+  // currently designed only for pages under /articles
+  buildBreadcrumb() {
+    // grab reference to element where we'll insert our HTML: <main><article>
+    const article = document.querySelector('main > article');
+
+    if (!article) {
+      console.warn('No <article> element defined');
+      return;
+    }
+
+    // grab reference to the page's title: <main><article><header><h2>
+    const h2 = article.querySelector('header > h2');
+
+    if (!h2) {
+      console.warn('No <h2> element defined');
+      return;
+    }
+
+    const title = h2.innerText;
+
+    let lis = '';
+    const html = `
+      <nav aria-label="Breadcrumb">
+        <ol class="breadcrumbs">
+          <li><a href="/">Home</a></li>
+          <li><a href="/articles/">Articles</a></li>
+          <li><a href="/articles/${slug}/" aria-current="page">${title}</a></li>
+        </ol>
+      </nav>
+    `;
+
+    article.insertAdjacentHTML('afterbegin', html);
   }
 }
 
