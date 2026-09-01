@@ -112,13 +112,11 @@ figure {
     width: 100%;
   }
 
-article figure {
+main figure img:not(.gallery img) {
   border: solid 0.25rem var(--color-deemphasized);
   box-shadow: var(--shadow);
+  display: block;
 }
-  article figure img {
-    display: block;
-  }
 
 figcaption {
   color: var(--color-deemphasized);
@@ -229,7 +227,7 @@ figcaption a {
 }
 
 img.avatar {
-  border: solid 8px var(--color-decorative);
+  border: solid 8px var(--color-deemphasized);
   bottom: -1.25rem;
   display: inline-block;
   box-shadow: var(--shadow);
