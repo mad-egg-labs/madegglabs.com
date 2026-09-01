@@ -14,4 +14,4 @@ Deploy content schema changes by running the following from within the `/studio`
 
 Deploy the site by merging changes to the `main` branch or by publishing content from within Sanity.
 
-[Pa11y CI](https://github.com/pa11y/pa11y-ci) and [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) are set up to run in parallel with deploys (i.e., they’re non-blocking currently).
+[Pa11y CI](https://github.com/pa11y/pa11y-ci), [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), and [Lychee](https://github.com/lycheeverse/lychee) are set up to run in parallel with deploys (i.e., they’re non-blocking currently).
