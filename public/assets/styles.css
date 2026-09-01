@@ -158,10 +158,9 @@ code {
 }
 
 .breadcrumbs li:not(:last-child)::after {
-  content: "›";
+  content: "›" / "";
   font-style: normal;
   margin: 0 0.67rem;
-  speak: none;
 }
 
 .breadcrumbs a[aria-current="page"] {
