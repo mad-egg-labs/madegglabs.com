@@ -26,7 +26,9 @@ class SiteHeader extends HTMLElement {
 
     // no breadcrumb on the /articles landing page
     if ('articles' === section && slug) {
-      window.requestAnimationFrame(this.buildBreadcrumb);
+      window.requestAnimationFrame(() => {
+        this.buildBreadcrumb(slug);
+      });
     }
   }
 
@@ -62,7 +64,7 @@ class SiteHeader extends HTMLElement {
   }
 
   // currently designed only for pages under /articles
-  buildBreadcrumb() {
+  buildBreadcrumb(slug) {
     // grab reference to element where we'll insert our HTML: <main><article>
     const article = document.querySelector('main > article');
 
