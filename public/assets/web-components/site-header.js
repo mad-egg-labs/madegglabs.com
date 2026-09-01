@@ -13,12 +13,7 @@ class SiteHeader extends HTMLElement {
 
     this.innerHTML = `
       <header>
-        <figure aria-hidden="true">
-          <picture>
-            <source srcset="/assets/img/${logo}.webp" type="image/webp">
-            <img src="/assets/img/${logo}.png" fetchpriority="high" alt="">
-          </picture>
-        </figure>
+        ${logo}
         ${h1}
         ${nav}
       </header>
@@ -42,7 +37,14 @@ class SiteHeader extends HTMLElement {
     else if ('apps' === section) {
       logo = 'hat-egg';
     }
-    return logo;
+    return `
+      <figure aria-hidden="true">
+        <picture>
+          <source srcset="/assets/img/${logo}.webp" type="image/webp">
+          <img src="/assets/img/${logo}.png" fetchpriority="high" alt="">
+        </picture>
+      </figure>
+    `;
   }
 
   // figure out whether to link the <h1>
