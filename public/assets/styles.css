@@ -468,6 +468,10 @@ summary {
     width: 128px;
   }
 
+  .retro-3d-text {
+    font-size: 4rem;
+  }
+
   /* minimize cumulative layout shifts (CLS) */
   site-header:not(:defined) {
     min-height: 350px;
