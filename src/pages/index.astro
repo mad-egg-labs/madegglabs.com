@@ -25,5 +25,36 @@ const page = await sanityClient.fetch(query)
 <BaseLayout
   bodyClasses="home sweet home"
 >
-  <PortableText value={page.body} components={portableTextComponents} />
+  <section class="secondary">
+    <div class="content">
+      <h2 class="retro-3d-text">You deserve a great website.</h2>
+      <p>Every small business <a href="https://madegglabs.com/articles/you-deserve-a-great-website/">deserves a great website</a>. If yours doesn’t delight, maybe we can help?</p><p><strong>Mad Egg Labs</strong> provides software development and consulting services. We’re based in <a href="https://traveloregon.com/places-to-go/regions/portland-region/">beautiful Portland, Oregon</a> and are experts in mobile web development, content management systems, and iOS app development with an emphasis on accessibility and great user experience.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <h2 class="retro-3d-text">What we do.</h2>
+      <p><img class="avatar" src="https://cdn.sanity.io/images/1jmyyjqm/production/39bd36a99a185906e98d6f68e2d58ec480312cb7-240x240.jpg?w=300" alt="">Mad Egg founder <a href="https://www.linkedin.com/in/andrewhedges/">Andrew Hedges</a> has been building for the web as long as it’s been around. We have experience with most languages and frameworks used on the web and aren’t afraid to jump in and learn something new.</p>
+      <p>Areas where we can quickly deliver solutions and/or provide value include standing up content-managed marketing websites &amp; mobile web apps and crafting <a href="https://madegglabs.com/apps">iOS applications</a>.</p>
+      <p>One of our specialties is what we call “technology rescues.” Do any of the following resonate with you?</p>
+      <ul>
+        <li>My website feels slow.</li>
+        <li>It’s hard to keep up-to-date.</li>
+        <li>I suspect my website isn’t easy to use for people with disabilities.</li>
+        <li>My site doesn’t look great or work perfectly on small screens (i.e., phones &amp; tablets).</li>
+        <li>My site is hosted on an outdated platform and needs a more modern look and feel.</li>
+      </ul>
+      <p><a href="https://madegglabs.com/articles/dont-make-your-customers-work/">People shouldn’t have to work to be your customers.</a> In many cases, improving that list above comes down to surprisingly simple-to-fix details. You may not need a complete redesign or to move to a whole different platform. Let us help you figure out how to make your website a little better in the near term.</p>
+      <p>Whatever work we do, we strive to put you in control of your message while giving your users or customers the best possible digital experience.</p>
+    </div>
+  </section>
+
+  <section class="secondary">
+    <div class="content">
+      <h2 class="retro-3d-text">Get in touch.</h2>
+      <p>Mad Egg is currently taking on new customers. Let us know what you have cooking at <span class="email-link"></span>!</p>
+    </div>
+  </section>
+
 </BaseLayout>

@@ -9,13 +9,11 @@ class SiteHeader extends HTMLElement {
     // build the parts
     const logo = this.buildLogo(section, is404);
     const h1   = this.buildH1(section);
-    const nav  = this.buildNav(section);
 
     this.innerHTML = `
       <header>
         ${logo}
         ${h1}
-        ${nav}
       </header>
     `;
 
@@ -50,19 +48,6 @@ class SiteHeader extends HTMLElement {
   // figure out whether to link the <h1>
   buildH1(section) {
     return section ? '<h1><a href="/">Mad Egg Labs</a></h1>' : '<h1>Mad Egg Labs</h1>';
-  }
-
-  // figure out whether there's an in-page nav
-  buildNav(section) {
-    return section ? '' : `
-      <nav>
-        <p>
-          <a href="#about">About</a> •
-          <a href="#services">Services</a> •
-          <a href="#contact">Contact</a>
-        </p>
-      </nav>
-    `;
   }
 
   // currently designed only for pages under /articles
