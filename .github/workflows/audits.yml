@@ -31,7 +31,7 @@ jobs:
         run: |
           npx serve dist -p 4321 &
           npx wait-on http://localhost:4321
-          npx pa11y-ci --s WCAG2AA
+          npx pa11y-ci -s WCAG2AA
 
   lighthouse:
     name: Lighthouse CI Audit
