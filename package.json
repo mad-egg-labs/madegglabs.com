@@ -19,12 +19,12 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-is": "^19.2.8",
-    "sanity": "^6.6.0",
+    "sanity": "^6.13.0",
     "styled-components": "^6.4.4"
   },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",
-    "@sanity/cli": "^7.13.0",
+    "@sanity/cli": "^8.9.1",
     "pa11y-ci": "^4.1.1"
   },
   "allowScripts": {
