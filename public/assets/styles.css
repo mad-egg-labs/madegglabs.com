@@ -451,6 +451,10 @@ summary {
     padding: 0.5rem;
   }
 
+  img.avatar {
+    width: 120px;
+  }
+
   .app-icon.small {
     height: 32px;
     width: 32px;
