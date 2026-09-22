@@ -19,6 +19,7 @@
 }
 
 :root {
+  --color-background: #19181d;
   --color-body-text: #e7e7e7;
   --color-accent: #ffc107;
   --color-decorative: #666;
@@ -26,12 +27,16 @@
   --shadow: rgba(0,0,0,0.75) 0.1em 0.1em 0.2em;
 }
 
-*:focus {
-  border: dashed 2px var(--color-accent);
-  display: inline-block;
-  margin: -2px -4px;
-  outline: none;
-  padding: 0 2px;
+:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 2px;
+  forced-color-adjust: auto;
+}
+
+@supports (box-shadow: 0 0 0 1px white) {
+  :focus-visible {
+    box-shadow: 0 0 0 2px var(--color-background);
+  }
 }
 
 html, body {
@@ -42,7 +47,7 @@ html, body {
 }
 
 body {
-  background-color: #19181d;
+  background-color: var(--color-background);
   color: var(--color-body-text);
   font-family: system-ui;
   font-feature-settings: "ss06";
