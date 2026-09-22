@@ -26,6 +26,14 @@
   --shadow: rgba(0,0,0,0.75) 0.1em 0.1em 0.2em;
 }
 
+*:focus {
+  border: dashed 2px var(--color-accent);
+  display: inline-block;
+  margin: -2px -4px;
+  outline: none;
+  padding: 0 2px;
+}
+
 html, body {
   height: 100dvh;
   margin: 0;
