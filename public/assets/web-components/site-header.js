@@ -47,7 +47,7 @@ class SiteHeader extends HTMLElement {
 
   // figure out whether to link the <h1>
   buildH1(section) {
-    return section ? '<h1><a href="/">Mad Egg Labs</a></h1>' : '<h1>Mad Egg Labs</h1>';
+    return section ? '<h1 tabindex="-1"><a href="/">Mad Egg Labs</a></h1>' : '<h1 tabindex="-1">Mad Egg Labs</h1>';
   }
 
   // currently designed only for pages under /articles
